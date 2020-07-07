@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    font-family: sans-serif;
+    background: #2c2b33;
+  }
+
+  .menu ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #ff4754;
+    border-radius: 5px;
+    padding: 24px;
+    position: relative;
+    z-index: 1;
+
+  }
+
+  .menu ul li {
+    /* background: transparent; */
+    background: #121212;
+    color: #fff;
+    border-radius: 50%;
+    padding: 24px;
+    margin: 12px;
+    z-index: 1;
+  }
+
+  ul li i {
+    font-weight: lighter;
+    font-size: 2rem;
+  }
+
+  .menu {
+    clip-path: circle(24px at 28px 28px);
+    transition: clip-path .8s ease-in-out, opacity .7s ease-in-out;
+  }
+
+  .menu:hover {
+    clip-path: circle(365px at 28px 28px);
+    cursor: pointer;
+  }
+
+  .menu:hover .icon {
+    opacity: 0;
+  }
+
+
+  ul li::before {
+    width: 80px;
+    height: 83px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    z-index: 21;
+    border-radius: 50%;
+  }
+
+  ul li:hover {
+    background: #123573;
+  }
+
+
+  .icon i {
+    position: absolute;
+    transform: translate(30%, 30%);
+    font-size: 2rem;
+    color: white;
+    z-index: 2;
+  }
+</style>
+
+<body>
+
+  <div class="menu">
+    <span class="icon"> <i class="fa fa-share"></i></span>
+    <ul>
+      <li><i class="fab fa-facebook"></i></li>
+      <li><i class="fa fa-envelope"></i></li>
+      <li><i class="fab fa-instagram"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+      <li><i class="fab fa-whatsapp"></i></li>
+      <li><i class="fab fa-viber"></i></li>
+    </ul>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<style>
+  .fa-twitter {
+    color: #1DA1F2;
+  }
+
+  .fa-envelope {
+    color: #d93025;
+  }
+
+  .fa-instagram {
+    color: red;
+  }
+
+  .fa-facebook-square {
+    color: #4267B2;
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 20px;
+  }
+
+  .caard {
+    position: absolute;
+    border-radius: .5rem;
+    width: 30rem;
+    height: 40rem;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    background: linear-gradient(bottom left, #7f00ff, #e100ff);
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .322);
+  }
+
+  .shareCon {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .shareCon li {
+    list-style: none;
+  }
+
+  .shareCon li a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background: #fff;
+    text-align: center;
+    transition: .3s;
+    opacity: 0;
+    color: #262626;
+    margin-bottom: 5px;
+    border: 3px solid #D8E2DC;
+    display: block;
+  }
+
+  .caard:hover .shareCon li a {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+
+  .caard:hover .shareCon li a .fa {
+    font-size: 24px;
+    line-height: 40px;
+    transition: .5s;
+  }
+
+  .caard:hover .shareCon li:nth-child(1) a {
+    transition-delay: .2s;
+  }
+
+  .caard:hover .shareCon li:nth-child(2) a {
+    transition-delay: .4s;
+  }
+
+  .caard:hover .shareCon li:nth-child(3) a {
+    transition-delay: .6s;
+  }
+
+  .fa-facebook:hover {
+    color: #3b5998;
+  }
+
+  .fa-twitter:hover {
+    color: #00aced;
+  }
+
+  .fa-instagram:hover {
+    color: #bc2a8d;
+  }
+</style>
+<style>
+  .main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+
+  .nav ol {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav ol li {
+    padding: 15px 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .nav ol li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: cyan;
+    transform: translateX(-100%);
+    transition: all .4s;
+  }
+
+  .nav ol li:hover::before {
+    transform: translateX(0);
+  }
+
+  .nav ol li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    transition: all .4s;
+  }
+
+  .nav ol li:hover a {
+    color: cyan;
+    text-shadow: -1px -1px 10px cyan, 1px 1px 10px cyan;
+  }
+</style>
+
+
+<body style="background: linear-gradient(-90deg, #22B573, #29ABE2)">
+  <div class="caard">
+    <ul class="shareCon">
+      <li title="Instagram"><a href=""><i class="fa fa-instagram"></i></a></li>
+      <li title="Facebook"><a href=""><i class="fa fa-facebook"></i></a></li>
+      <li title="Twitter"><a href=""><i class="fa fa-twitter"></i></a></li>
+    </ul>
+  </div>
+
+
+  <div class="main">
+    <div class="nav ">
+
+      <ol>
+        <li><a href="">HOme</a></li>
+        <li><a href="">service</a></li>
+        <li><a href="">about</a></li>
+        <li><a href="">contace</a></li>
+      </ol>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

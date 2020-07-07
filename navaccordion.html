@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  ul {
+    list-style: none;
+    background-color: transparent;
+    height: auto;
+    width: 140px;
+    color: #fff;
+  }
+
+  li input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  li label {
+    display: block;
+    cursor: pointer;
+    background-color: #3498db;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 70px;
+    border: 1px solid;
+  }
+
+  li ul {
+    height: 0;
+    overflow: hidden;
+  }
+
+  li ul a {
+    display: block;
+    text-decoration: none;
+    width: 90px;
+  }
+
+  input[type='checkbox']:checked+ul {
+    height: auto;
+    margin-left: 4px;
+  }
+
+  input[type='checkbox']:checked+ul a {
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 70px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+  }
+
+
+  /*  */
+  .ul,
+  .li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* height: 100%; */
+  }
+
+  .li {
+    flex: 1 1 160px;
+  }
+
+  .li .a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: capitalize;
+    transition: .5s;
+  }
+
+  .li .a:hover {
+    transform: scale(1.1);
+    color: #000;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    box-shadow: 4px 5px 6px black;
+  }
+</style>
+
+<body>
+  <nav class="nav">
+    <ul class="ul">
+      <li class="li"><a href="#" class="a">nav1</a></li>
+      <li class="li"><a href="#" class="a">nav2</a></li>
+      <li class="li"><a href="#" class="a">nav3</a></li>
+    </ul>
+  </nav>
+
+  <nav>
+    <ul>
+      <li>
+        <label for="one">Girls</label>
+        <input type="checkbox" name="" id="one" />
+        <ul>
+          <li>
+            <a href="">Shirts</a>
+            <a href="">Shirts</a>
+            <a href="">Shirts</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <label for="two">image filter</label>
+        <input type="checkbox" name="" id="two" />
+        <ul>
+          <li>
+            <a href="imagefilter.html">imagefilter</a>
+            <a href="fotofilter2.html">fotofilter2</a>
+            <a href="fotofilter.html">fotofilter</a>
+            <a href="fotoneha.html">fotoneha</a>
+            <a href="fotoalina.html">fotoalina</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+</body>
+
+</html>

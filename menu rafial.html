@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bg menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #485696;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container label {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    cursor: pointer;
+    line-height: 70px;
+    text-align: center;
+    background-color: #fc7a1e;
+    color: #fff;
+    border-radius: 50%;
+    transition: .4s;
+    font-size: 24px;
+    box-shadow: inset 2px 3px 5px rgba(0, 0, 0, .2), 2px 2px 8px rgba(0, 0, 0, .2);
+  }
+
+  .container .icons {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: #f9c784;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    transition: .6s;
+  }
+
+  input {
+    display: none;
+  }
+
+  #click:checked~.container .icons i {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  #click:checked~.container .fa-share {
+    opacity: 0;
+    animation: 1s rotate;
+  }
+
+
+  @keyframes rotate {
+    50% {
+      transform: scale(0);
+    }
+
+  }
+
+  .container .fa-times {
+    opacity: 0;
+  }
+
+  #click:checked~.container .fa-times {
+    opacity: 1;
+    box-shadow: inset 2px 3px 5px rgba(0, 0, 0, .2);
+
+  }
+
+  #click:checked~.container .icons {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .container .icons i {
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #f24c00;
+    color: #f5f5f5;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: .4s;
+    box-shadow: inset 2px 3px 5px rgba(0, 0, 0, .1), 2px 2px 8px rgba(0, 0, 0, .1);
+
+  }
+
+  #click:checked~.container .icons i:nth-child(1) {
+    top: 55px;
+    left: 55px;
+    transition-delay: .5s;
+  }
+
+  #click:checked~.container .icons i:nth-child(2) {
+    top: 10px;
+    left: 155px;
+    transition-delay: .6s;
+  }
+
+  #click:checked~.container .icons i:nth-child(3) {
+    top: 55px;
+    left: 55px;
+    transition-delay: .7s;
+  }
+
+  #click:checked~.container .icons i:nth-child(4) {
+    top: 155px;
+    left: 10px;
+    transition-delay: .8s;
+  }
+
+  #click:checked~.container .icons i:nth-child(5) {
+    bottom: 55px;
+    right: 55px;
+    transition-delay: .9s;
+  }
+
+  #click:checked~.container .icons i:nth-child(6) {
+    bottom: 10px;
+    right: 155px;
+    transition-delay: 1s;
+  }
+
+  #click:checked~.container .icons i:nth-child(7) {
+    bottom: 55px;
+    right: 55px;
+    transition-delay: 1.1s;
+  }
+
+  #click:checked~.container .icons i:nth-child(8) {
+    bottom: 155px;
+    right: 10px;
+    transition-delay: 1.2s;
+  }
+
+  .load-container {
+    display: grid;
+    grid-template-columns: repeat(2, 20px);
+    grid-template-rows: repeat(2, 20px);
+  }
+
+  .load-container:hover {
+    cursor: url('/aPlayer/Play.png');
+
+  }
+
+  .load-container span {
+    display: block;
+    animation: loading 1s infinite;
+  }
+
+  .load-container span:nth-child(1) {
+    animation-delay: .9s;
+  }
+
+  .load-container span:nth-child(2) {
+    animation-delay: .6s;
+  }
+
+  .load-container span:nth-child(3) {
+    animation-delay: .1s;
+  }
+
+  .load-container span:nth-child(4) {
+    animation-delay: .3s;
+  }
+
+  @keyframes loading {
+    0% {
+      background: #0088ff;
+      box-shadow: 0 0 3px #0088ff;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .container2 label {
+    cursor: pointer;
+  }
+
+  .cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container2 label span {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    background-color: #f52067;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 14px;
+    font-size: 22px;
+    transition: .4;
+
+  }
+
+  .container2 label span:hover {
+    background: #ff407f;
+  }
+
+  .container2 i {
+    cursor: pointer;
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    width: 40px;
+    height: 40px;
+    padding-top: 11px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(29, 207, 238);
+    color: #fff;
+    font-size: 18px;
+    transition: .4s;
+  }
+
+  #click2:checked~.container2 label span {
+    transform: rotate(45deg);
+  }
+
+  #click2:checked~.container2 i {
+    opacity: 1;
+  }
+
+  #click2:checked~.container2 i:nth-child(1) {
+    transform: translateY(70px) translateX(5px);
+    transition-delay: .8s;
+  }
+
+  #click2:checked~.container2 i:nth-child(2) {
+    transform: translateY(-60px) translateX(5px);
+    transition-delay: .4s;
+  }
+
+  #click2:checked~.container2 i:nth-child(3) {
+    transform: translateY(5px) translateX(70px);
+    transition-delay: .6s;
+  }
+
+  #click2:checked~.container2 i:nth-child(4) {
+    transform: translateY(5px) translateX(-60px);
+    transition-delay: .2s;
+  }
+
+  .nav {
+    display: flex;
+    background: #3ac9f5;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 15px;
+    line-height: 65px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .2);
+  }
+
+  .nav .ul {
+    display: flex;
+    text-align: center;
+    list-style: none;
+
+  }
+
+  .nav .ul .li {
+    cursor: pointer;
+    height: 100%;
+    padding: 0 10px;
+    transition: .4s;
+  }
+
+
+  .nav .ul .li:hover {
+    background: #2eacd3;
+  }
+
+  .nav .ul .li a {
+    color: #f2f2f2;
+  }
+
+  .nav .ul .li a span {
+    position: absolute;
+    letter-spacing: .5px;
+    transform: translateX(-70px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s all;
+  }
+
+
+  .nav .ul .li a i {
+    font-size: 22px;
+    margin: 0 38px;
+    transition: .4s all;
+  }
+
+  .nav .ul .li:hover a i {
+    transform: translateX(-25px);
+
+  }
+
+  .nav .ul .li:hover a span {
+    transform: translateX(-55px);
+    opacity: 1;
+    pointer-events: visible;
+  }
+</style>
+
+<body>
+
+  <input type="checkbox" name="" id="click">
+
+  <div class="container"><label for="click" class="fas fa-share"></label>
+    <label for="click" class="fas fa-times"></label>
+    <div class="icons"><i class="fab fa-instagram"></i></div>
+    <div class="icons"><i class="fab fa-facebook-f"></i></div>
+    <div class="icons"><i class="fab fa-youtube"></i></div>
+    <div class="icons"><i class="fab fa-linkedin-in"></i></div>
+    <div class="icons"><i class="fab fa-github"></i></div>
+    <div class="icons"><i class="fab fa-whatsapp"></i></div>
+    <div class="icons"><i class="fab fa-google"></i></div>
+    <div class="icons"><i class="fas fa-envelope"></i></div>
+  </div>
+
+  <div class="cont">
+    <input type="checkbox" name="" id="click2">
+
+    <div class="container2">
+      <label for="click2"><span class="fas fa-plus"></span></label>
+      <i class="fas fa-camera"></i>
+      <i class="fas fa-music"></i>
+      <i class="fas fa-video"></i>
+      <i class="fas fa-download"></i>
+    </div>
+  </div>
+
+  <div class="load-container">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav">
+    <ul class="ul">
+      <li class="li"><a href="#"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li class="li"><a href="#"><i class="fas fa-bell"></i><span>Alert</span></a></li>
+      <li class="li"><a href="#"><i class="fas fa-hourglass-end"></i><span>Time</span></a></li>
+      <li class="li"><a href="#"><i class="fas fa-paper-plane"></i><span>Chat</span></a></li>
+    </ul>
+  </nav>
+</body>
+
+</html>

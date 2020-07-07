@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    min-height: 100vh;
+    font-family: sans-serif;
+    background: #2c2b33;
+  }
+
+  .menu h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px rgb(85, 84, 84);
+  }
+
+  .menu ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* background: #ff4754; */
+    border-radius: 5px;
+    padding: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .menu ul li {
+    /* background: transparent; */
+    background: #121212;
+    color: #fff;
+    border-radius: 50%;
+    padding: 24px;
+    margin: 12px;
+    z-index: 1;
+  }
+
+  ul li i {
+    font-weight: lighter;
+    font-size: 2rem;
+  }
+
+  .menu {
+    clip-path: circle(400px at 350px 350px);
+    transition: clip-path .8s ease-in-out, background .7s ease-in-out;
+  }
+
+  .menu:hover {
+    clip-path: circle(1024px at 28px 28px);
+    cursor: pointer;
+  }
+
+
+  ul li:hover {
+    background: #123573;
+  }
+
+
+
+
+  .icon i {
+    position: absolute;
+    transform: translate(30%, 30%);
+    font-size: 2rem;
+    color: white;
+    z-index: 2;
+  }
+</style>
+
+<body>
+
+  <div class="menu">
+    <h1>Menu</h1>
+    <ul onmouseout="bye()">
+      <li id="fb1" onmouseover="hello(this)" data-name="Facebook" data-color="#9d20c0"><i class="fab fa-facebook"></i>
+      </li>
+      <li id="fb2" onmouseover="hello(this)" data-name="Gmail" data-color="#032232"><i class="fa fa-envelope"></i></li>
+      <li id="fb3" onmouseover="hello(this)" data-name="Instagram" data-color="#064a7b"><i class="fab fa-instagram"></i>
+      </li>
+      <li id="fb4" onmouseover="hello(this)" data-name="Twitter" data-color="#098b39"><i class="fab fa-twitter"></i>
+      </li>
+      <li id="fb5" onmouseover="hello(this)" data-name="Whatsapp" data-color="#c72220"><i class="fab fa-whatsapp"></i>
+      </li>
+      <li id="fb6" onmouseover="hello(this)" data-name="Viber" data-color="#91d026"><i class="fab fa-viber"></i></li>
+    </ul>
+  </div>
+</body>
+<script>
+  menu = document.querySelector(".menu");
+  menuh1 = document.querySelector("h1");
+  var lists = document.querySelectorAll("li");
+
+  function hello(color) {
+    menu.style.background = color.getAttribute("data-color")
+    menuh1.innerText = color.getAttribute("data-name")
+  }
+
+  function bye() {
+    menu.style.background = "#2c2b33";
+    menuh1.innerText = "menu";
+  }
+</script>
+
+</html>

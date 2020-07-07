@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    font-family: sans-serif;
+    background-color: #db042f;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    left: 50%;
+  }
+
+  .toggle {
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #30bdf2;
+    color: white;
+    height: 80px;
+    width: 80px;
+    transition: 1s;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+
+  }
+
+  .toggle:hover {
+    background-color: rgb(46, 178, 226);
+    transition: .4s;
+  }
+
+  .toggle>.fa-plus {
+    font-size: 60px;
+    transition: .4s;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 1s;
+  }
+
+  .items>a {
+    text-decoration: none;
+    display: flex;
+    color: #b2b2b2;
+    background-color: #fff;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    align-self: center;
+    text-transform: none;
+  }
+
+  a>.fas {
+    font-size: 30px;
+    transition: .2s;
+  }
+
+  a:hover>.fas {
+    font-size: 40px;
+    color: #30bdf2;
+  }
+
+  #clicks:checked~.menu .toggle {
+    border-radius: 30px 0 0 30px;
+  }
+
+  #clicks:checked~.menu #last-item {
+    border-radius: 0 30px 30px 0;
+  }
+
+  #clicks {
+    display: none;
+  }
+</style>
+
+
+
+<body>
+
+  <input type="checkbox" name="" id="clicks">
+  <label for="clicks" class="menu"></label>
+  <div class="toggle" onclick="expand()">
+    <i class="fas fa-plus" id="toggle"></i></div>
+  <div class="items" id="items">
+    <a href=""><i class="fas fa-user"></i></a>
+    <a href=""><i class="fas fa-comment-dots"></i></a>
+    <a href=""><i class="fas fa-camera"></i></a>
+    <a href="" id="last-item"><i class="fas fa-bell"></i></a></div>
+</body>
+<script>
+  var state = false;
+
+  function expand() {
+    if (state == false) {
+      document.getElementById('items').style.transform = "scaleX(1)"
+      document.getElementById('toggle').style.transform = "rotate(45deg)"
+      state = true;
+    } else {
+      document.getElementById('items').style.transform = "scaleX(0)"
+      document.getElementById('toggle').style.transform = "rotate(0deg)"
+      state = false;
+    }
+
+  }
+</script>
+
+</html>

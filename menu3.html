@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+
+<style>
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+  }
+
+  html {
+    font-family: sans-serif;
+  }
+
+  body {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background: #e8ecef;
+    color: #fff;
+  }
+
+  .nav-bar {
+    background: #141218;
+    padding: 10px 0 20px 15px;
+    border-radius: 8px;
+    width: 86px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .08) 0 2px 2px rgba(0, 0, 0, .12) 0 4px 4px rgba(0, 0, 0, .16) 0 8px 8px rgba(0, 0, 0, .2);
+    position: relative;
+    transition: width 400ms ease;
+  }
+
+  .task-pane {
+    display: -webkit-box;
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  .circle {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .circle.red {
+    background: #ff5f52
+  }
+
+  .circle.yellow {
+    background: #ffbe05
+  }
+
+  .circle.green {
+    background: #16cb32
+  }
+
+  .brand-icon {
+    margin-bottom: 25px;
+    padding-left: 17px;
+    font-size: 20px;
+    font-weight: 900;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+
+  .brand-icon .fab {
+    margin-right: 15px;
+  }
+
+  .brand-icon .brand-text {
+    opacity: 0;
+  }
+
+
+  .search-bar {
+    margin-bottom: 15px;
+    padding: 12px;
+    padding-left: 17px;
+    border-radius: 5px;
+    margin-right: 15px;
+    transition: all 600ms ease;
+  }
+
+  .search-bar .fa-search {
+    width: 35px;
+    font-size: 20px;
+  }
+
+  .search-bar input {
+    border: 0;
+    outline: 0;
+    width: calc(100% -42px);
+    font-size: 15px;
+    background: transparent;
+    opacity: 0;
+    position: absolute;
+    transition: all 400ms ease;
+  }
+
+  .search-bar input::-webkit-input-placeholder {
+    color: #fff
+  }
+
+  .search-bar input::placeholder {
+    color: #fff
+  }
+
+  .nav-links {
+    padding-right: 15px;
+  }
+
+  .nav-links .nav-link:hover {
+    background: #383238;
+  }
+
+  .nav-links .nav-link {
+    padding: 12px;
+    padding-left: 17px;
+    border-radius: 5px;
+    transition: background .4s ease;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .nav-links .nav-link .fas,
+  .nav-links .nav-link .far {
+    width: 35px;
+    font-size: 20px;
+    margin-left: 2px;
+  }
+
+  .nav-links .nav-link .nav-link-name {
+    display: inline-block;
+    font-size: 15px;
+    position: absolute;
+    margin-left: 40px;
+    white-space: nowrap;
+    opacity: 0;
+  }
+
+  .arrow {
+    background: #3f8bfe;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+    right: -18px;
+    top: 94px;
+    cursor: pointer;
+    transition: transform 400ms ease;
+  }
+
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(2) .nav-link-name {
+    transition-delay: calc(2*100ms);
+    webkit-transition-delay: calc(2*100ms);
+  }
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(3) .nav-link-name {
+    transition-delay: calc(3*100ms);
+  }
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(4) .nav-link-name {
+    transition-delay: calc(4*100ms);
+  }
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(5) .nav-link-name {
+    transition-delay: calc(5*100ms);
+  }
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(6) .nav-link-name {
+    transition-delay: calc(6*100ms);
+  }
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(7) .nav-link-name {
+    transition-delay: calc(7*100ms);
+  }
+
+  .nav-bar.extended {
+    width: 250px;
+  }
+
+  .nav-bar.extended .arrow {
+    transform: rotate(.5turn);
+    transition: all 100ms ease;
+  }
+
+  .nav-bar.extended .brand-text {
+    transition: all 3s ease;
+    opacity: 1;
+  }
+
+  .nav-bar.extended .search-bar {
+    background: #383238;
+    transition: all 3s ease;
+  }
+
+  .nav-bar.extended input {
+    opacity: 1;
+    transition: all 3s ease;
+  }
+
+  .nav-bar.extended .nav-link-name {
+    opacity: 1;
+    transition: all 3s ease;
+  }
+
+  .nav-bar.extended .nav-links .nav-link:nth:child(1) .nav-link-name {
+    transition-delay: calc(1*1000ms);
+  }
+</style>
+
+<body>
+  <div class="nav-bar">
+    <div class="task-pane">
+      <div class="circle red"></div>
+      <div class="circle yellow"></div>
+      <div class="circle green"></div>
+    </div>
+    <div class="brand-icon"><i class="fab fa-autoprefixer"></i><span class="brand-text">Menu</span></div>
+    <div class="search-bar"><i class="fas fa-search"></i><input type="text" name="search" placeholder="search"></div>
+    <div class="arrow"><i class="fas fa-chevron-left"></i></div>
+    <div class="nav-links">
+      <div class="nav-link"><i class="fas fa-home"></i><span class="nav-link-name">Home</span></div>
+      <div class="nav-link"><i class="fas fa-poll"></i><span class="nav-link-name">Analytics</span></div>
+      <div class="nav-link"><i class="fas fa-bullhorn"></i><span class="nav-link-name">news</span></div>
+      <div class="nav-link"><i class="fas fa-list"></i><span class="nav-link-name">Watchlist</span></div>
+      <div class="nav-link"><i class="fas fa-comment"></i><span class="nav-link-name">chat</span></div>
+    </div>
+  </div>
+</body>
+<script>
+  let arrow = document.querySelector(".arrow");
+  let nav_bar = document.querySelector(".nav-bar");
+  arrow.addEventListener("click", () => {
+    nav_bar.classList.toggle("extended");
+  })
+</script>
+
+</html>

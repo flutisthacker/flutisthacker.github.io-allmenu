@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bg menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #485696;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+
+  .nav {
+    display: flex;
+    background: #3ac9f5;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 15px;
+    line-height: 65px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .2);
+  }
+
+  .nav .ul {
+    display: flex;
+    text-align: center;
+    list-style: none;
+
+  }
+
+  .nav .ul .li {
+    cursor: pointer;
+    height: 100%;
+    padding: 0 10px;
+    transition: .4s;
+  }
+
+
+  .nav .ul .li:hover {
+    background: #2eacd3;
+  }
+
+  .nav .ul .li a {
+    color: #f2f2f2;
+  }
+
+  .nav .ul .li a span {
+    position: absolute;
+    letter-spacing: .5px;
+    transform: translateX(-70px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s all;
+  }
+
+
+  .nav .ul .li a i {
+    font-size: 22px;
+    margin: 0 38px;
+    transition: .4s all;
+  }
+
+  .nav .ul .li:hover a i {
+    transform: translateX(-25px);
+
+  }
+
+  .nav .ul .li:hover a span {
+    transform: translateX(-55px);
+    opacity: 1;
+    pointer-events: visible;
+  }
+</style>
+
+<style>
+  .nav2 {
+    position: relative;
+    margin: 300px auto 0;
+    width: 590px;
+    height: 50px;
+    background: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
+  }
+
+  .nav2 a {
+    font-size: 15px;
+  }
+</style>
+
+<body>
+  <nav class="nav">
+    <ul class="ul">
+      <li class="li"><a href="#"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li class="li"><a href="#"><i class="fas fa-bell"></i><span>Alert</span></a></li>
+      <li class="li"><a href="#"><i class="fas fa-hourglass-end"></i><span>Time</span></a></li>
+      <li class="li"><a href="#"><i class="fas fa-paper-plane"></i><span>Chat</span></a></li>
+    </ul>
+  </nav>
+  <div class="nav2">
+    <a href="">HOme</a>
+    <a href="">about</a>
+    <a href="">blog</a>
+    <a href="">profile</a>
+    <a href="">contact</a>
+    <div class="animation start-home"></div>
+  </div>
+</body>
+
+</html>

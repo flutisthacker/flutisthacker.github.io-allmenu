@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #161615;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  li {
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 20px;
+    border: #fa0001 2px solid;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+    /* box-shadow: 3px 3px 2px 1px gray; */
+    transition: margin-left .5s ease-in-out, linear-gradient .9s ease;
+  }
+
+
+  ul li a {
+    width: 100%;
+    line-height: 50px;
+    height: 50px;
+    padding: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fa0001;
+  }
+
+  ul li a i {
+    font-size: 20px;
+    margin-right: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fa0021;
+  }
+
+  ul li:hover {
+    text-decoration: none;
+    /* box-shadow: 2px 2px 2px gray; */
+    margin-left: 40px;
+    /* background: linear-gradient(75deg, aqua, blue); */
+
+  }
+
+  ul li::before {
+    content: "";
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-left: #fa0001 0px solid;
+    transition: left .3s ease-in-out;
+    /* transition-delay: .2s; */
+  }
+
+  ul li:hover::before {
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-left: #fa0001 1px solid;
+    left: -10px
+  }
+
+  ul li::after {
+    content: "";
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-left: #fa0001 0px solid;
+    transition: left .3s ease-in-out;
+  }
+
+  ul li:hover::after {
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    border-left: #fa0010 1px solid;
+    left: -20px;
+    top: 5px;
+  }
+</style>
+
+<style>
+  .roll {
+    width: 400px;
+    height: 100px;
+    /* background: #f61600; */
+    transform-style: preserve-3d;
+    position: relative;
+    transition: all .8s ease;
+    overflow: visible;
+    transform-origin: center;
+  }
+
+  .roll1 {
+    width: 400px;
+    height: 100px;
+    background: #fff;
+    /* transform-origin: bottom; */
+    position: absolute;
+    transition: rotateX .8s ease, translateY 2s ease;
+
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 100px;
+  }
+
+  .roll2 {
+    width: 400px;
+    height: 100px;
+    background: #000;
+    transform-origin: bottom;
+    position: absolute;
+    transform: translateZ(-100px) rotateX(-90deg);
+    transition: rotateX 2s ease, translateY 2s ease;
+
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 100px;
+  }
+
+  .roll:hover {
+    transform: rotateX(90deg);
+  }
+</style>
+
+<body>
+  <ul>
+    <li><a href="#"><i class="fab fa-facebook"></i>Home</a></li>
+    <li><a href="#"><i class="fab fa-twitter"></i>About</a></li>
+    <li><a href="#"><i class="fab fa-twitch"></i>Service</a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i>Contact</a></li>
+  </ul>
+
+  <div class="roll">
+    <div class="roll1">Roll me...</div>
+    <div class="roll2">Oh Hello!</div>
+  </div>
+
+</body>
+
+</html>

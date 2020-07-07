@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+    transition: .9s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    box-shadow: 3px 3px 2px 1px gray;
+  }
+
+  li:nth-child(1),
+  li:nth-child(3) {
+    background: linear-gradient(to right, aqua, blue);
+  }
+
+  li:nth-child(2),
+  li:nth-child(4) {
+    background: linear-gradient(to left, aqua, blue);
+  }
+
+  li:hover:nth-child(1),
+  li:hover:nth-child(3) {
+    transform: skewY(10deg) rotateY(-30deg);
+  }
+
+  li:hover:nth-child(2),
+  li:hover:nth-child(4) {
+    transform: skewY(-10deg) rotateY(30deg);
+  }
+
+  ul li i {
+    color: white;
+  }
+</style>
+
+<body>
+  <ul>
+    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+    <li><a href=""><i class="fab fa-twitch"></i></a></li>
+    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+  </ul>
+
+</body>
+
+</html>

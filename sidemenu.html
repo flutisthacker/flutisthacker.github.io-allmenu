@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+
+  }
+
+
+  body {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    background: linear-gradient(-270deg, lightblue, darkblue);
+  }
+</style>
+
+
+<style>
+  .nav {
+    width: 70px;
+    height: 100%;
+  }
+
+  .nav ul {
+    list-style: none;
+  }
+
+  .nav ul .nav-item {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    color: #16161d;
+    font-size: 26px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 70px;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+    transition: .4s ease-in-out;
+    margin-left: -70px;
+  }
+
+  .nav ul .nav-item:hover i {
+    transform: scale(1.2);
+    transition: .3s;
+    color: rgb(53, 150, 240);
+  }
+
+  .nav ul .nav-item:nth-child(1) {
+    transform: inherit;
+    color: rgb(53, 150, 240);
+    font-size: 36px;
+    margin-left: 0;
+    border-bottom-right-radius: 15px;
+
+  }
+
+
+  #click:checked~.nav ul .nav-item:nth-child(1) {
+    border-bottom-right-radius: 0;
+  }
+
+  #click {
+    display: none;
+  }
+
+  #click:checked~.nav ul .nav-item:nth-child(1) i {
+    transform: rotate(180deg);
+  }
+
+  #click:checked~.nav ul .nav-item:nth-child(2) {
+    transition-delay: .1s;
+  }
+
+  #click:checked~.nav ul .nav-item:nth-child(3) {
+    transition-delay: .4s;
+  }
+
+  #click:checked~.nav ul .nav-item:nth-child(4) {
+    transition-delay: .7s;
+  }
+
+
+  #click:checked~.nav ul .nav-item:nth-child(5) {
+    transition-delay: 1s;
+  }
+
+  #click:checked~.nav ul .nav-item:nth-child(6) {
+    transition-delay: 1.3s;
+    border-bottom-right-radius: 15px;
+  }
+
+  #click:checked~.nav ul .nav-item {
+    margin-left: 0em;
+    transform: rotateY(0deg);
+  }
+</style>
+<style>
+  .content {
+    color: #202020;
+  }
+
+  .share-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1;
+  }
+
+  #click2 {
+    display: none;
+  }
+
+  .share-btn span {
+    height: 60px;
+    width: 60px;
+    background: #16a085;
+    line-height: 60px;
+    font-size: 25px;
+    color: #e9fcf8;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #159d82;
+  }
+
+  .share-btn:hover span {
+    background: #159d82;
+    border-color: #12876f;
+  }
+
+  .share-btn a span {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    background-color: #16a085;
+    transition: .6s;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  #click2:checked~.share-btn a span {
+    width: 50px;
+    height: 50px;
+    font-size: 23px;
+    line-height: 50px;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: auto;
+
+  }
+
+  #click2:checked~.share-btn a:nth-child(2) span {
+    bottom: 0;
+    right: 80px;
+    background: #1da1f2;
+    border-color: #0e9af1;
+  }
+
+  #click2:checked~.share-btn a:nth-child(3) span {
+    bottom: 65px;
+    right: 65px;
+    background: #e1306c;
+    border-color: #df2060;
+  }
+
+  #click2:checked~.share-btn a:nth-child(3) span {
+    transition-delay: .2s;
+  }
+
+  #click2:checked~.share-btn a:nth-child(4) span {
+    bottom: 80px;
+    right: 0px;
+    background: #ff0000;
+    border-color: #e60000;
+  }
+
+  #click2:checked~.share-btn a:nth-child(4) span {
+    transition-delay: .4s;
+  }
+</style>
+
+<body>
+  <input type="checkbox" name="" id="click">
+  <div class="nav">
+    <ul>
+      <label for="click">
+        <li class="nav-item"><i class="fas fa-angle-right"></i></li>
+      </label>
+      <li class="nav-item"><i class="fas fa-home"></i></li>
+      <li class="nav-item"><i class="fas fa-user"></i></li>
+      <li class="nav-item"><i class="fas fa-envelope"></i></li>
+      <li class="nav-item"><i class="fas fa-tags"></i></li>
+      <li class="nav-item"><i class="fas fa-search"></i></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <input type="checkbox" id="click2">
+    <label for="click2" class="share-btn">
+      <span class="fas fa-share-alt"></span>
+      <a href=""><span class="fab fa-twitter"></span></a>
+      <a href=""><span class="fab fa-instagram"></span></a>
+      <a href=""><span class="fab fa-youtube"></span></a>
+    </label>
+  </div>
+</body>
+
+<script>
+  // window.history.pushState('NewPage', 'Title', '/typingspeed.html');
+  document.querySelector('.fa-home').addEventListener("click", () => {
+    processAjaxData({
+      'html': 'loading.html',
+      'Title': 'samans'
+    }, 'loading.html')
+  })
+
+  // dynamic
+
+
+  function processAjaxData(response, url) {
+    document.querySelector("body").innerHTML = response.html;
+    document.title = response.Title;
+    window.history.pushState({
+      "html": response.html,
+      "Title": response.Title
+    }, "", url);
+  }
+</script>
+
+</html>

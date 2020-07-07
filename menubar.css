@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+}
+
+.container {
+  position: absoulte;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 400px;
+  margin-left: -200px;
+  margin-top: -200px;
+  overflow: hidden;
+  background: none;
+  color: #ccc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialised;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 50px;
+  height: 25px;
+}
+
+.menu .menu-top {
+  position: absolute;
+  width: 60px;
+  height: 10px;
+  background: #ff6a00;
+  border-radius: 20px;
+  transition: .7s;
+}
+
+.menu .top-line {
+  position: absolute;
+  top: -19px;
+  left: -40px;
+  width: 0px;
+  height: 3px;
+  border-radius: 25px;
+  background: #ccc;
+  transition: all 1s ease-out;
+}
+
+.menu .menu-bottom {
+  position: absolute;
+  width: 60px;
+  height: 10px;
+  bottom: 0;
+  top: initial;
+  background: #ff6a00;
+  border-radius: 20px;
+  transition: .7s;
+}
+
+.menu .bottom-line {
+  position: absolute;
+  top: 40px;
+  left: -49px;
+  width: 0px;
+  height: 3px;
+  border-radius: 25px;
+  background: #ccc;
+  transition: all 1s ease-out;
+}
+
+.menu-items {
+  position: absolute;
+  width: 95%;
+  height: 20px;
+  top: -45px;
+  left: -585px;
+  padding: 5px 10px;
+  /* transform: translate(-50%, -50%); */
+  pointer-events: none;
+  opacity: 0;
+  transition: all 2s ease-in-out;
+  z-index: 20;
+}
+
+.menu-items ul {
+  line-height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #ff6a00;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+.menu-items ul li {
+  list-style-type: none;
+  position: relative;
+  display: block;
+  flex: 0 1 auto;
+  transition: all .5s ease-in;
+}
+
+.menu-items ul li a {
+  text-decoration: none;
+  color: inherit;
+  cursor: progress;
+}
+
+.menu-items ul li:hover {
+  transform: scale(1.4) rotate(-6deg);
+  color: #3498db;
+}
+
+.a {
+  color: #ccc;
+}
+
+.menu.active {
+  pointer-events: all;
+}
+
+.menu.active .menu-top {
+  animation: line-top-open 3s ease both;
+  height: 6px;
+}
+
+.menu.active .top-line {
+  animation: lightsaber-open .8s ease-in 3s both;
+}
+
+.menu.active .menu-bottom {
+  animation: line-bottom-open 3s ease both;
+  height: 6px;
+}
+
+.menu.active .bottom-line {
+  animation: lightsaber-open .8s ease-in 3s both;
+}
+
+.menu.inactive {
+  pointer-events: all;
+}
+
+.menu.inactive .menu-top {
+  animation: line-top-close 3s ease 1s both;
+}
+
+.menu.inactive .top-line {
+  animation: lightsaber-close .5s ease;
+}
+
+.menu.inactive .menu-bottom {
+  animation: line-bottom-close 3s ease 1s both;
+}
+
+.menu.inactive .bottom-line {
+  animation: lightsaber-close .5s ease;
+}
+
+.menu-items.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 2s ease-in 2s;
+}
+
+@keyframes line-top-open {
+  0% {
+    transform: translateY(0px) traslateX(0px);
+    top: 0px;
+  }
+
+  50% {
+    transform: translateY(-20px);
+    top: -10px;
+    left: 0px;
+  }
+
+  100% {
+    transform: traslateX(-20px) translateY(-100px);
+    top: -5px;
+  }
+}
+
+@keyframes line-top-close {
+  0% {
+    transform: traslateX(-20px) translateY(-100px);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: traslateX(0px) translateY(0px);
+  }
+}
+
+@keyframes line-bottom-open {
+  0% {
+    transform: translateY(0px) traslateX(0px);
+    top: 0px;
+
+  }
+
+  50% {
+    transform: translateY(20px);
+    top: 30px;
+  }
+
+  100% {
+    transform: traslateX(100px) translateY(20px);
+    top: 20px;
+  }
+}
+
+@keyframes line-bottom-close {
+  0% {
+    transform: translateX(100px) traslateY(20px);
+  }
+
+  20% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: traslateX(0px) translateY(0px);
+  }
+}
+
+@keyframes lightsaber-open {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 202px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes lightsaber-close {
+  100% {
+    width: 0px;
+  }
+
+  0% {
+    width: 202px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+  }
+}

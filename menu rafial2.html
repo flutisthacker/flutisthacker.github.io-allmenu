@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bg menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #485696; */
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .container2 label {
+    cursor: pointer;
+  }
+
+  input {
+    display: none;
+  }
+
+  .cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container2 label span {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    background-color: #f52067;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 14px;
+    font-size: 22px;
+    transition: .4;
+
+  }
+
+  .container2 label span:hover {
+    background: #ff407f;
+  }
+
+  .container2 i {
+    cursor: pointer;
+    opacity: .2;
+    transform: translateY(5px) translateX(5px);
+    width: 40px;
+    height: 40px;
+    padding-top: 11px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(29, 207, 238);
+    color: #fff;
+    font-size: 18px;
+    transition: .4s;
+  }
+
+  #click2:checked~.container2 label span {
+    transform: rotate(45deg);
+  }
+
+  #click2:checked~.container2 i {
+    opacity: 1;
+  }
+
+  #click2:checked~.container2 i:nth-child(1) {
+    transform: translateY(70px) translateX(5px);
+    transition-delay: .8s;
+  }
+
+  #click2:checked~.container2 i:nth-child(2) {
+    transform: translateY(-60px) translateX(5px);
+    transition-delay: .4s;
+  }
+
+  #click2:checked~.container2 i:nth-child(3) {
+    transform: translateY(5px) translateX(70px);
+    transition-delay: .6s;
+  }
+
+  #click2:checked~.container2 i:nth-child(4) {
+    transform: translateY(5px) translateX(-60px);
+    transition-delay: .2s;
+  }
+</style>
+
+<body>
+
+  <input type="checkbox" name="" id="click2">
+
+  <div class="container2">
+    <i class="fas fa-camera"></i>
+    <i class="fas fa-music"></i>
+    <i class="fas fa-video"></i>
+    <i class="fas fa-download"></i>
+    <label for="click2"><span class="fas fa-plus"></span></label>
+  </div>
+</body>
+
+</html>
